@@ -3,7 +3,6 @@ import React, { useState } from 'react';
 import SectionHeading from '../SectionHeading';
 import MenuCard from '../MenuCard';
 import RevealOnScroll from '../RevealOnScroll';
-import CoffeeBean from '../CoffeeBean';
 import { Coffee, Leaf, Plus, Cookie, Scan } from 'lucide-react';
 
 const MenuSection = () => {
@@ -45,27 +44,8 @@ const MenuSection = () => {
     { id: 'snacks', label: 'Snacks', icon: Cookie }
   ];
   
-  // Generate multiple coffee beans with random positions
-  const renderCoffeeBeans = () => {
-    const beans = [];
-    for (let i = 0; i < 15; i++) {
-      beans.push(
-        <CoffeeBean 
-          key={i}
-          style={{ 
-            left: `${Math.random() * 100}%`, 
-            '--i': i 
-          } as React.CSSProperties}
-        />
-      );
-    }
-    return beans;
-  };
-  
   return (
     <section id="menu" className="section-container relative overflow-hidden bg-kastanos-beige/30">
-      {renderCoffeeBeans()}
-      
       <SectionHeading 
         title="Our Menu" 
         subtitle="Quality ingredients, carefully crafted beverages, and freshly made snacks."

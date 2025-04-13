@@ -1,27 +1,9 @@
 
 import React from 'react';
 import RevealOnScroll from '../RevealOnScroll';
-import CoffeeBean from '../CoffeeBean';
 import { Scan, Coffee, Menu as MenuIcon } from 'lucide-react';
 
 const HeroSection = () => {
-  // Generate multiple coffee beans with random positions
-  const renderCoffeeBeans = () => {
-    const beans = [];
-    for (let i = 0; i < 10; i++) {
-      beans.push(
-        <CoffeeBean 
-          key={i}
-          style={{ 
-            left: `${Math.random() * 100}%`, 
-            '--i': i 
-          } as React.CSSProperties}
-        />
-      );
-    }
-    return beans;
-  };
-
   return (
     <section 
       id="home" 
@@ -32,8 +14,6 @@ const HeroSection = () => {
         backgroundPosition: "center"
       }}
     >
-      {renderCoffeeBeans()}
-      
       <div className="container mx-auto px-4 py-16 md:py-20 relative z-10">
         <RevealOnScroll>
           <div className="max-w-xl mx-auto text-center text-white">
