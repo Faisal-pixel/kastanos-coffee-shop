@@ -4,7 +4,7 @@ import SectionHeading from '../SectionHeading';
 import MenuCard from '../MenuCard';
 import RevealOnScroll from '../RevealOnScroll';
 import CoffeeBean from '../CoffeeBean';
-import { Coffee, Leaf, Plus, Cookie } from 'lucide-react';
+import { Coffee, Leaf, Plus, Cookie, Scan } from 'lucide-react';
 
 const MenuSection = () => {
   const [activeTab, setActiveTab] = useState('coffee');
