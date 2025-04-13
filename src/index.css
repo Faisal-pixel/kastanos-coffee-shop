@@ -1,96 +1,79 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
-  :root {
-    --background: 36 33% 94%;
-    --foreground: 20 15% 17%;
-
-    --card: 30 25% 96%;
-    --card-foreground: 20 15% 17%;
-
-    --popover: 30 25% 96%;
-    --popover-foreground: 20 15% 17%;
-
-    --primary: 3 24% 23%;
-    --primary-foreground: 36 33% 94%;
-
-    --secondary: 47 50% 94%;
-    --secondary-foreground: 20 15% 17%;
-
-    --muted: 47 30% 88%;
-    --muted-foreground: 20 10% 40%;
-
-    --accent: 89 17% 63%;
-    --accent-foreground: 20 15% 17%;
-
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 36 33% 94%;
-
-    --border: 20 15% 85%;
-    --input: 20 15% 85%;
-    --ring: 20 15% 50%;
-
-    --radius: 0.5rem;
+  html {
+    scroll-behavior: smooth;
   }
-}
-
-@layer base {
-  * {
-    @apply border-border;
-  }
-
+  
   body {
-    @apply bg-background text-foreground font-sans;
-  }
-
-  h1, h2, h3, h4, h5, h6 {
-    @apply font-serif;
+    @apply bg-white text-kastanos-text antialiased;
   }
 }
 
 @layer components {
   .section-container {
-    @apply container max-w-6xl mx-auto px-4 py-12 md:py-16;
+    @apply py-16 md:py-20 px-4;
   }
   
-  .section-title {
-    @apply text-3xl md:text-4xl font-serif font-medium mb-6 md:mb-8 text-kastanos-brown relative;
-  }
-  
-  .section-subtitle {
-    @apply text-lg md:text-xl font-medium mb-4 text-kastanos-text;
-  }
-
   .btn-primary {
-    @apply bg-kastanos-bronze text-white py-3 px-6 rounded-md shadow-md hover:shadow-lg transition-all duration-300
-    hover:bg-opacity-90 font-medium text-sm md:text-base;
+    @apply bg-kastanos-brown hover:bg-kastanos-brown/90 text-white py-2 px-4 rounded transition-colors;
   }
-
+  
   .btn-secondary {
-    @apply bg-kastanos-beige text-kastanos-brown py-3 px-6 rounded-md shadow-md hover:shadow-lg transition-all duration-300
-    hover:bg-opacity-90 font-medium text-sm md:text-base border border-kastanos-brown/20;
+    @apply bg-kastanos-bronze hover:bg-kastanos-bronze/90 text-white py-2 px-4 rounded transition-colors;
   }
+}
 
-  .card-hover {
-    @apply transition-transform duration-300 hover:scale-[1.02];
+@keyframes ripple {
+  0% {
+    transform: scale(1);
+    opacity: 0.4;
   }
-  
-  .coffee-bean {
-    @apply absolute w-6 h-6 opacity-0;
-    animation: fall 15s linear infinite;
-    animation-delay: calc(var(--i) * 0.5s);
+  100% {
+    transform: scale(3);
+    opacity: 0;
   }
+}
 
-  .reveal-animation {
-    @apply opacity-0;
+@keyframes steam {
+  0% {
+    transform: translateY(0) translateX(-50%);
+    opacity: 0;
   }
-  
-  .reveal-animation.active {
-    @apply animate-fade-in-up;
+  50% {
+    opacity: 0.7;
+  }
+  100% {
+    transform: translateY(-15px) translateX(-50%);
+    opacity: 0;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-pulse-soft {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.6;
   }
 }
