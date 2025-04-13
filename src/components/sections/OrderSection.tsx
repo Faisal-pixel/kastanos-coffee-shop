@@ -1,5 +1,6 @@
 
 import React from 'react';
+import { Link } from 'react-router-dom';
 import SectionHeading from '../SectionHeading';
 import RevealOnScroll from '../RevealOnScroll';
 import { QrCode } from 'lucide-react';
@@ -27,9 +28,9 @@ const OrderSection = () => {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="btn-primary flex items-center justify-center gap-2">
-              Download QR Code
-            </button>
+            <Link to="/menu" className="btn-primary flex items-center justify-center gap-2">
+              Order Now
+            </Link>
             <button className="btn-secondary flex items-center justify-center gap-2">
               Demo Order
             </button>

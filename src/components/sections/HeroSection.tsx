@@ -2,6 +2,7 @@
 import React from 'react';
 import RevealOnScroll from '../RevealOnScroll';
 import { Scan, Coffee, Menu as MenuIcon } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const HeroSection = () => {
   return (
@@ -28,10 +29,10 @@ const HeroSection = () => {
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a href="#order" className="btn-primary flex items-center justify-center gap-2">
+              <Link to="/menu" className="btn-primary flex items-center justify-center gap-2">
                 <Scan size={18} />
-                <span>Scan to Order</span>
-              </a>
+                <span>Order Now</span>
+              </Link>
               <a href="#menu" className="btn-secondary flex items-center justify-center gap-2">
                 <MenuIcon size={18} />
                 <span>See Our Menu</span>
