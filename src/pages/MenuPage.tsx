@@ -175,7 +175,7 @@ const MenuPage = () => {
       </main>
 
       <Dialog open={cartOpen} onOpenChange={setCartOpen}>
-        <DialogContent className="sm:max-w-md">
+        <DialogContent className="bg-white sm:max-w-md">
           <DialogHeader>
             <DialogTitle>Your Cart</DialogTitle>
           </DialogHeader>
