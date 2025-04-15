@@ -86,7 +86,7 @@ const PaymentCompletion = () => {
             className="flex items-center gap-2 hover:opacity-80 transition-opacity"
           >
             <ArrowLeft size={20} />
-            <span>Back to Home</span>
+            <span className='hidden md:inline-block'>Back to Home</span>
           </button>
           <h1 className="text-xl font-serif">Order Confirmation</h1>
           <div className="w-8"></div> {/* Empty div for flex layout balance */}
@@ -141,7 +141,7 @@ const PaymentCompletion = () => {
           </p>
           <Button 
             onClick={handleReviewClick}
-            className="w-full bg-kastanos-brown hover:bg-kastanos-brown/90"
+            className="w-full bg-kastanos-brown hover:bg-kastanos-brown/90 text-white"
           >
             <Star size={16} className="mr-2" /> 
             Leave a Review

@@ -28,7 +28,7 @@ const Index = () => {
       toast({
         title: "Welcome to Kastanos!",
         description: "Order your coffee and snacks for a quick pickup during your commute.",
-        duration: 5000,
+        duration: 3000,
       });
     }, 2000);
   }, [toast]);

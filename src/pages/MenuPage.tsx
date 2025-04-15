@@ -116,10 +116,12 @@ const MenuPage = () => {
               <TabsTrigger value="snacks" className="data-[state=active]:bg-kastanos-brown data-[state=active]:text-white">Snacks</TabsTrigger>
             </TabsList>
             
-            {Object.keys(menuData).map((category) => (
+            {Object.keys(menuData).map((category) => {
+              console.log(category.slice(1))
+              return (
               <TabsContent key={category} value={category} className="p-4">
                 <h2 className="text-xl font-serif mb-4 text-kastanos-brown">
-                  {category.charAt(0).toUpperCase() + category.slice(1)}
+                  {category.charAt(0).toUpperCase() + category.slice(1)} {/*Basically saying take the first character, make it in Caps and then concatenate it with the other letters by slicing the first letter*/ }
                 </h2>
                 <ul className="space-y-4">
                   {menuData[category as keyof typeof menuData].map((item) => (
@@ -137,7 +139,7 @@ const MenuPage = () => {
                       <Button 
                         onClick={() => handleAddToCart(item)}
                         size="sm"
-                        className="bg-kastanos-brown hover:bg-kastanos-brown/90"
+                        className="bg-kastanos-brown hover:bg-kastanos-brown/80 text-white"
                       >
                         <Plus size={16} />
                         <span className="ml-1">Add</span>
@@ -146,7 +148,7 @@ const MenuPage = () => {
                   ))}
                 </ul>
               </TabsContent>
-            ))}
+            )})}
           </Tabs>
         </motion.div>
         
