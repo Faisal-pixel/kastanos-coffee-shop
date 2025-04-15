@@ -84,7 +84,7 @@ const MenuPage = () => {
             className="flex items-center gap-2 hover:opacity-80 transition-opacity"
           >
             <ArrowLeft size={20} />
-            <span>Back to Home</span>
+            <span className='hidden md:inline-block'>Back to Home</span>
           </button>
           <h1 className="text-xl font-serif">Kastanos Menu</h1>
           <button 
