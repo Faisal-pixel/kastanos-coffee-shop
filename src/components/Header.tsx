@@ -1,6 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
+import { AnimatePresence, motion } from "framer-motion";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -70,9 +71,21 @@ const Header = () => {
       </div>
       
       {/* Mobile Menu */}
+      <AnimatePresence>
       {isMenuOpen && (
-        <div className="md:hidden absolute top-full left-0 w-full bg-white shadow-md py-4 px-4">
-          <nav className="flex flex-col space-y-4">
+        <motion.div
+        initial={{ opacity: 0, height: 0 }}
+        animate={{ opacity: 1, height: 'auto' }}
+        exit={{ opacity: 0, height: 0 }}
+        transition={{ duration: 0.3 }}
+        className="md:hidden absolute top-full left-0 w-full bg-white shadow-md py-4 px-4">
+          <motion.nav
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20, transition: {duration: 0.1, delay: 0} }}
+            transition={{ duration: 0.3, delay: 0.3, }}
+            
+          className="flex flex-col space-y-4">
             {menuLinks.map(link => (
               <a 
                 key={link.name} 
@@ -90,9 +103,10 @@ const Header = () => {
             >
               Order Now
             </a>
-          </nav>
-        </div>
+          </motion.nav>
+        </motion.div>
       )}
+      </AnimatePresence>
     </header>
   );
 };
