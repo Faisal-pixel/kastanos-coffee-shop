@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { AnimatePresence, motion } from "framer-motion";
+import KastanosLogo1 from '@/images/kastanos-1.png';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -37,7 +38,10 @@ const Header = () => {
     >
       <div className="container mx-auto px-4 flex justify-between items-center">
         <a href="#" className="flex items-center gap-2">
-          <span className="text-xl md:text-2xl font-serif font-bold text-kastanos-brown">KASTANOS</span>
+          {/* <span className="text-xl md:text-2xl font-serif font-bold text-kastanos-brown">KASTANOS</span> */}
+          <div className='w-[130.262px]'>
+            <img src={KastanosLogo1} className='w-full h-full'/>
+          </div>
           <span className="text-xs md:text-sm text-kastanos-green font-light">COFFEE & COMMUNITY</span>
         </a>
         
