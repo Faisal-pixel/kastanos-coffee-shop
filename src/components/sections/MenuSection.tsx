@@ -3,25 +3,27 @@ import React, { useState } from 'react';
 import SectionHeading from '../SectionHeading';
 import MenuCard from '../MenuCard';
 import RevealOnScroll from '../RevealOnScroll';
-import { Coffee, Leaf, Plus, Cookie, Scan } from 'lucide-react';
+import { Coffee, Plus, Cookie, Scan, Snowflake} from 'lucide-react';
 
 const MenuSection = () => {
-  const [activeTab, setActiveTab] = useState('coffee');
+  const [activeTab, setActiveTab] = useState('hot');
   
   const menuData = {
-    coffee: [
+    hot: [
       { name: 'Drip Coffee (Plain)', price: 2000 },
-      { name: 'Drip Coffee (With Milk)', price: 2500 },
+      { name: 'Green tea', price: 2000 },
+      { name: 'Black tea', price: 2000 },
+      { name: 'Strawberry/Raspberry tea', price: 2000 },
+    ],
+    cold: [
       { name: 'Ice Latte', price: 4000 },
+      { name: 'Ice Caramel Latte', price: 5000 },
       { name: 'Ice Caramel Macchiato', price: 5000 },
       { name: 'Ice Mocha', price: 5000 },
-      { name: 'Honey Cinnamon Latte', price: 5000 }
-    ],
-    teas: [
-      { name: 'Green Tea', price: 2000 },
-      { name: 'Black Tea', price: 2000 },
-      { name: 'Strawberry/Raspberry Tea', price: 2000 },
-      { name: 'Ice Teas', price: 2500 }
+      { name: 'Honey Cinnamon Latte', price: 5000 },
+      { name: 'Iced Delight', price: 2500 },
+      { name: 'Strawberry Rhapsody', price: 2500 },
+      { name: 'Lemonade lush', price: 3000 }
     ],
     extras: [
       { name: 'Shots', price: 2000 },
@@ -33,13 +35,14 @@ const MenuSection = () => {
       { name: 'Chicken Pie', price: 1700 },
       { name: 'Banana Bread (Plain)', price: 1500 },
       { name: 'Banana Bread (Almond)', price: 1700 },
-      { name: 'Banana Bread (Choco Chip)', price: 1700 }
+      { name: 'Banana Bread (Choco Chip)', price: 1700 },
+      { name: 'Small chops', price: 3000 },
     ]
   };
   
   const tabs = [
-    { id: 'coffee', label: 'Coffee', icon: Coffee },
-    { id: 'teas', label: 'Teas', icon: Leaf },
+    { id: 'hot', label: 'Hot', icon: Coffee },
+    { id: 'cold', label: 'Cold', icon: Snowflake },
     { id: 'extras', label: 'Extras', icon: Plus },
     { id: 'snacks', label: 'Snacks', icon: Cookie }
   ];
