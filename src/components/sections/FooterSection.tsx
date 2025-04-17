@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Instagram, Facebook, Twitter, ArrowUp } from 'lucide-react';
-
+import KastanosFooterLogo from '@/images/kastanos-1.png';
 const FooterSection = () => {
   const scrollToTop = () => {
     window.scrollTo({
@@ -15,7 +15,9 @@ const FooterSection = () => {
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row justify-between items-center mb-8">
           <div className="mb-4 md:mb-0">
-            <h2 className="text-2xl md:text-3xl font-serif font-bold mb-2">KASTANOS</h2>
+          <div className='w-[130.262px]'>
+            <img src={KastanosFooterLogo} className='w-full h-full'/>
+          </div>
             <p className="text-kastanos-beige/80">COFFEE & COMMUNITY</p>
           </div>
           
